@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+
+    <aura:attribute name="Nome" type="String" default="Thiago Cesar" description="Nome"></aura:attribute>
+    <aura:attribute name="Idade" type="Integer" default="26" description="Idade"></aura:attribute>
+    <aura:attribute name="souBoolean" type="Boolean" default="True" description="bool true"></aura:attribute>
+    <aura:attribute name="Curso" type="String" default="Salesforce" description="Curso"></aura:attribute>
+    
+    <div class="slds-box slds-theme_default">
+        Olá Salesforce:{!v.Nome}<br/>
+        Meu numero é:{!v.Idade}<br/>
+        Booleana é:{!v.souBoolean}<br/>
+        Curso é:{!v.Curso}<br/>
+        <lightning:button variant="brand" label="Frase" title="Brand action" onclick="{! c.handleClick }"/>
+        <lightning:button variant="brand" label="Frase2" title="Brand action" onclick="{! c.handleClick2 }"/>
+
+    </div>
+
+</aura:component>

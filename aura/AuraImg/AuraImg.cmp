@@ -1,0 +1,35 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	
+ 	<aura:attribute name="visivelTodos" type="Boolean" default="False" description="True ou False"></aura:attribute>
+    <div class="slds-box slds-theme_default">
+    	<lightning:button variant="brand" label="Todos" title="Todos" onclick="{! c.handleClickTodos }" />
+    </div>
+    
+    <aura:attribute name="visivel" type="Boolean" default="False" description="True ou False"></aura:attribute>
+    <div class="slds-box slds-theme_default">
+    	<lightning:button variant="brand" label="Musca" title="Musca" onclick="{! c.handleClick }" />
+    </div>
+    
+    <aura:if isTrue="{!v.visivel}" >
+    	<img src="{!$Resource.Musca}"/>
+    </aura:if>
+    
+    <aura:attribute name="visivel2" type="Boolean" default="False" description="True ou False"></aura:attribute>
+    <div class="slds-box slds-theme_default">
+    	<lightning:button variant="brand" label="Comu" title="Comu" onclick="{! c.handleClick2 }" />
+    </div>
+    
+    <aura:if isTrue="{!v.visivel2}" >
+    	<img src="{!$Resource.Comu}"/>
+    </aura:if>
+    
+    <aura:attribute name="visivel3" type="Boolean" default="False" description="True ou False"></aura:attribute>
+    <div class="slds-box slds-theme_default">
+    	<lightning:button variant="brand" label="Liberal" title="Liberal" onclick="{! c.handleClick3 }" />
+    </div>
+    
+    <aura:if isTrue="{!v.visivel3}" >
+    	<img src="{!$Resource.Liberal}"/>
+    </aura:if>    
+    
+</aura:component>

@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	
+ 	
+    <aura:attribute name="visivel" type="Boolean" default="True" description="True ou False"></aura:attribute>
+    <div class="slds-box slds-theme_default">
+    	<lightning:button variant="brand" label="Musca" title="Musca" onclick="{! c.handleClick }" />
+    </div>
+    
+    <aura:if isTrue="{!v.visivel}" >
+    	<img src="{!$Resource.Musca}"/>
+    </aura:if>
+    
+    
+    
+</aura:component>

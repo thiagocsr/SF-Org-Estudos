@@ -1,0 +1,15 @@
+<aura:component controller="listaContasController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+<aura:attribute name="accounts" type="Account[]"></aura:attribute>
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+<lightning:card>
+    <lightning:accordion aura:id="accordion" activeSectionName="B">
+        <aura:iteration items="{!v.accounts}" var="acc" indexVar="ind">
+            <lightning:accordionSection name="{!ind}" label="{!acc.Name}">
+                <div style="color: blue;">{!acc.Name} - {!acc.Phone} - {!acc.AnnualRevenue} - {!acc.Rating}
+                </div>
+            </lightning:accordionSection>
+        </aura:iteration>
+    </lightning:accordion>
+</lightning:card>
+</aura:component>

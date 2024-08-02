@@ -1,0 +1,58 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="listaContasController">
+	<!-- attributes -->
+    <aura:attribute name="data" type="List"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="data2" type="List"/>
+    <aura:attribute name="columns2" type="List"/>
+    <aura:attribute name="sortDirection" type="String" default="asc" />
+    <aura:attribute name="defaultSortDirection" type="String" default="asc" />
+    <aura:attribute name="sortedBy" type="String" />
+
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+
+    <div class="container">
+        <lightning:card> <!--<lightning:card footer="Developed by Thiago, Aprendiz Salesforce">-->
+            <p>
+                <lightning:icon iconName="standard:event" size="small" />
+                <b>Clientes não contatados</b> 
+            </p>
+            <p class="slds-var-p-horizontal_small">
+                <!-- the container element determine the height of the datatable -->
+                <div style="height: 400px">
+                    <lightning:datatable
+                        keyField="id"
+                        data="{! v.data }"
+                        columns="{! v.columns }"
+                        hideCheckboxColumn="true"
+                        defaultSortDirection="{!v.defaultSortDirection}"
+                        sortedDirection="{!v.sortDirection}"
+                        sortedBy="{!v.sortedBy}"
+                        onsort="{!c.handleSort}"/>
+                </div>
+            </p>
+        </lightning:card>
+    </div>
+    <div class="container">
+        <lightning:card> <!--<lightning:card footer="Developed by Thiago, Aprendiz Salesforce">-->
+            <p>
+                <lightning:icon iconName="standard:event" size="small" />
+                <b>Clientes contatados</b>
+            </p>
+            <p class="slds-var-p-horizontal_small">
+                <!-- the container element determine the height of the datatable -->
+                <div style="height: 400px">
+                    <lightning:datatable
+                        keyField="id"
+                        data="{! v.data2 }"
+                        columns="{! v.columns2 }"
+                        hideCheckboxColumn="true"
+                        defaultSortDirection="{!v.defaultSortDirection}"
+                        sortedDirection="{!v.sortDirection}"
+                        sortedBy="{!v.sortedBy}"
+                        onsort="{!c.handleSort}"/>
+                </div>
+            </p>
+        </lightning:card>
+    </div>
+</aura:component>

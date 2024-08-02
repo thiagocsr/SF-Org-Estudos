@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <lightning:recordEditForm aura:id="recordEditForm"
+                           objectApiName="Mercado__c"
+						   onsuccess="{!c.confirma}">
+        <lightning:messages />
+        
+        <lightning:card title="Criar Mercado">
+        	<div class="slds-grid">
+            	<div class="slds-col slds-p-horizontal_medium">
+            		<lightning:inputField fieldName="Name" aura:id="nomito"/>
+                    <lightning:button class="slds-m-top_small" type="submit" label="Create new" />
+            	</div>
+            	<div class="slds-col slds-p-horizontal_medium">
+        			<lightning:inputField fieldName="Aluguel__c" />
+        			<lightning:inputField fieldName="Tipo_do_Imovel__c" />
+            	</div>
+        	</div>
+        </lightning:card>
+        
+    </lightning:recordEditForm>
+</aura:component>
