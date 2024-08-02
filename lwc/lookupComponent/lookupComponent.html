@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Multi Entity Lookup">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" label="Search" onchange={handleSearch} class="slds-m-bottom_small"></lightning-input>
+            <template if:true={searchResults.length}>
+                <ul class="slds-list_dotted slds-m-top_small">
+                    <template if:true={searchExecuted}>
+                        <template for:each={searchResults} for:item="result">
+                            <li key={result.id} data-id={result.id} class="slds-item slds-p-around_x-small slds-text-link" onclick={handleSelect}>
+                                <span class="slds-icon_container slds-icon-standard-account" title="Account">
+                                    <lightning-icon icon-name="standard:record" alternative-text="Record" size="small" class="slds-m-right_x-small"></lightning-icon>
+                                </span>
+                                <span>{result.label} ({result.entity})</span>
+                            </li>
+                        </template>
+                    </template>
+                </ul>
+            </template>
+            <template if:false={searchExecuted} class="slds-text-body_small slds-m-top_small">
+                <p>No results found. Please enter a search term.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

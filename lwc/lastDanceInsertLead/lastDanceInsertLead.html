@@ -1,0 +1,35 @@
+<template>
+    <div class="slds-box slds-theme_default">
+    <div>
+        <h1>Criar Lead</h1>
+        <div>
+            <label>Sobrenome</label>
+            <input type="text" name="lastName" required value={lastName} onchange={handleInputChange}/>
+        </div>
+        <div>
+            <label>Empresa</label>
+            <input type="text" name="company" required value={company} onchange={handleInputChange}/>
+        </div>
+        <div>
+            <label>Receita Anual</label>
+            <input type="number" name="annualRevenue" required value={annualRevenue} onchange={handleInputChange}/>
+        </div>
+        <div>
+            <label>Classificação</label>
+            <input type="text" name="rating" required value={rating} onchange={handleInputChange}/>
+        </div>
+        <div>
+            <label>Telefone</label>
+            <input type="tel" name="phone" required value={phone} onchange={handleInputChange}/>
+        </div>
+        <div>
+            <label>Celular</label>
+            <input type="tel" name="mobilePhone" required value={mobilePhone} onchange={handleInputChange}/>
+        </div>
+        <div>
+            <button onclick={handleSubmit}>Criar</button>
+            <button onclick={handleClear}>Limpar</button>
+        </div>
+    </div>
+</div>
+</template>

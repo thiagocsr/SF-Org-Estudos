@@ -1,0 +1,35 @@
+<template>
+    <lightning-card  title="Basic Calculator In LWC"> <!-- Khumed Khatib -->
+        <div class="slds-p-around_small">
+            <lightning-input label = "Numero 1" name = "value1" 
+              type = "Number" value = {num1} 
+            onchange={InputChangeHandler}></lightning-input>
+            <lightning-input label = "Numero 2" name = "value2"  
+            type = "Number" value = {num2}
+            onchange={InputChangeHandler}></lightning-input>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium ">
+             <b>Result = {result}</b>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+            <lightning-button variant="Brand" label="Adicionar" onclick={handleClick} 
+              class="slds-m-left_x-small">
+            </lightning-button>
+            <lightning-button variant="Brand" label="Subtrair" onclick={handleClick} 
+              class="slds-m-left_x-small">
+            </lightning-button>
+            <lightning-button variant="Brand" label="Multiplicar" onclick={handleClick} 
+              class="slds-m-left_x-small">
+            </lightning-button>
+            <lightning-button variant="Brand" label="Dividir" onclick={handleClick} 
+             class="slds-m-left_x-small">
+            </lightning-button>
+            <lightning-button variant="Brand" label="Clear" onclick={clearCampo} 
+              class="slds-m-left_x-small">
+            </lightning-button>
+            <lightning-button variant="Brand" label="=" onclick={calc} 
+              class="slds-m-left_x-small">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

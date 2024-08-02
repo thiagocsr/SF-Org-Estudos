@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="ApexWireMethodToProperty" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <template lwc:if={opps.data}>
+                <template for:each={opps.data} for:item="opp">
+                    <div key={opp.Id}>
+                        <p>Id: {opp.Id} - Nome: {opp.Name} - Amount: {opp.Amount}</p>
+                        <p>Stage: {opp.StageName} - Create Date: {opp.Create_Date__c}</p>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <lightning-card>
+        <div class="slds-m-around_medium">
+            <p>Empresa: {empresa}</p>
+            <p>CNPJ: {cnpj}</p>
+            <p>Endereco: {endereco}</p>
+        </div>       
+        <div class="slds-m-around_medium" if:true = {visivel}>
+            <p>Produto: {produto}</p>
+            <p>Descrição: {descricao}</p>
+            <p>Preço: {preco}</p>
+        </div>
+        <div class="slds-m-around_medium" if:true = {visivel}>
+            <p>Promoção: {promocao}</p>
+            <p>Oferta1: {oferta1}</p>
+            <p>Oferta2: {oferta2}</p>
+        </div>
+    </lightning-card>
+    <lightning-button variant="brand" label="Visivel" title="Primary action" onclick={trocaVisivel} class="slds-m-left_x-small"></lightning-button>
+</template>

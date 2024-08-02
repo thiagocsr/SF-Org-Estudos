@@ -1,0 +1,11 @@
+<template>
+	<lightning-card title="Formulário">
+		<div class="slds-m-around_medium">
+			<lightning-input label="Nome" type="text" name="nome" class="formInput" onchange={handleChange}> </lightning-input>
+            <lightning-input label="Peso" type="text" name="peso" class="formInput" onchange={handleChange}> </lightning-input>
+			<lightning-input label="Altura" type="phone" name="altura" class="formInput" onchange={handleChange}></lightning-input>
+		</div>
+        <p>Resultado de {nome}: {resultado}</p>
+        <lightning-button label="Calcular" onclick={calcula}></lightning-button>
+	</lightning-card>
+</template>

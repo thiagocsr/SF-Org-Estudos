@@ -1,0 +1,48 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Adicionar Oportunidade" class="slds-card">
+        <div class="slds-form slds-form_stacked slds-p-around_medium">
+    <form onsubmit={handleSubmit}>
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="oportunity-name">Nome da oportunidade</label>
+            <div class="slds-form-element__control">
+        <lightning-input type="text" required value={opportunityName} onchange={handleNameChange}></lightning-input>
+            </div>
+        </div>
+
+    <div class="slds-form-element">
+        <label class="slds-form-element__label" for="oportunity-stage">Fase</label>
+        <div class="slds-form-element__control">
+        <select required onchange={handleStageChange}>
+          <option value="">-- Selecione --</option>
+          <option value="Prospecting">Prospecting</option>
+          <option value="Qualification">Qualification</option>
+          <option value="Proposal">Proposal</option>
+          <option value="Negotiation">Negotiation</option>
+          <option value="Closed Won">Closed Won</option>
+          <option value="Closed Lost">Closed Lost</option>
+        </select>
+        </div>
+    </div>
+
+    <div class="slds-form-element">
+        <label class="slds-form-element__label" for="oportunity-date">Data de Fechamento</label>
+        <div class="slds-form-element__control">
+        <lightning-input type="date" required value={opportunityCloseDate} onchange={handleCloseDateChange}></lightning-input>
+        </div>
+    </div>
+
+    <div class="slds-form-element">
+        <label class="slds-form-element__label" for="oportunity-amount">Valor estimado</label>
+          <div class="slds-form-element__control">
+            <lightning-input type="number" min="0" required value={opportunityAmount} onchange={handleAmountChange}></lightning-input>
+          </div>
+    </div>
+
+        <div class="slds-m-top_medium">
+            <lightning-button variant="destructive" type="submit" label="Salvar"></lightning-button>
+</div>
+    </form>
+    </div>
+    </lightning-card>
+  </template>

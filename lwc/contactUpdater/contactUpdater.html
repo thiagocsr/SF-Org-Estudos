@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Atualizar Contatos" icon-name="standard:contact">
+        <!-- Spinner for loading state -->
+        <lightning-spinner if:true={loading}></lightning-spinner>
+
+        <!-- Display contacts if available -->
+        <template if:true={contacts}>
+            <!-- Iterate through contacts -->
+            <template for:each={contacts} for:item="contact">
+                <div key={contact.Id} class="slds-box slds-box_x-small slds-m-bottom_small">
+                    <lightning-input label="Name" value={contact.Name} readonly></lightning-input>
+                    <lightning-input label="Email" value={contact.Email} data-id={contact.Id} data-field="Email" onchange={handleInputChange}></lightning-input>
+                    <lightning-input label="Phone" value={contact.Phone} data-id={contact.Id} data-field="Phone" onchange={handleInputChange}></lightning-input>
+                </div>
+            </template>
+            <lightning-button label="Save Changes" variant="brand" onclick={saveChanges}></lightning-button>
+        </template>
+
+        <!-- Display error message if any -->
+        <template if:true={error}>
+            <p>{error}</p>
+        </template>
+    </lightning-card>
+</template>
